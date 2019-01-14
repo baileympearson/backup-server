@@ -1,0 +1,7 @@
+#! /bin/bash
+
+PORT=$(cat /bin/backup/port)
+SSH_COMMAND='"ssh -p '${PORT}'"'
+
+rsync -av -e "ssh -p 15482" --delete --exclude-from='/bin/backup/exclude' /home/bailey bailey@0.tcp.ngrok.io:~/backup
+

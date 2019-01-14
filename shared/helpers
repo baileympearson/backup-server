@@ -1,0 +1,7 @@
+#! /bin/bash
+
+get_port () {
+	cat ~/.port
+}
+
+get_port

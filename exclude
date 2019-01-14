@@ -1,0 +1,6 @@
+.config
+.cache
+.WebStorm2018.3
+.npm
+.electron
+.local

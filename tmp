@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# PORT=$(cat /bin/backup/port)
+PORT=16021
+
+ssh -p $PORT bailey@0.tcp.ngrok.io
