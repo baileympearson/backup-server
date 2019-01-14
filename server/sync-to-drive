@@ -1,0 +1,11 @@
+#! /bin/bash
+
+MOUNT_LOCATION=/mnt/backup
+
+clients=`cat clients.txt`
+
+for client in $clients
+do
+	BACKUP_LOCATION=/home/$client/backup
+	./copy-to-drive $BACKUP_LOCATION $MOUNT_LOCATION
+done

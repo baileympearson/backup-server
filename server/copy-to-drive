@@ -1,0 +1,39 @@
+#! /bin/bash
+
+#########################################################
+# 
+#	usage: copy-to-drive <old location> <new location>
+#		syncs all data from old location to new location
+#
+#########################################################
+
+
+MIN_PARAMS=2
+
+if [ $# -lt "$MIN_PARAMS" ]
+then
+	echo "usage: <backup_from> <backup_to>"
+	exit 1
+fi
+
+LOCATION_TO_BACKUP=$1
+LOCATION_TO_STORE=$2
+
+# check if backup location exists
+if [ ! -d "$LOCATION_TO_BACKUP" ]; then
+	# TODO log backup location non-existent
+	exit 1
+fi
+
+if [ ! -d "$LOCATION_TO_STORE" ]; then
+	# TODO log backup location non-existent
+	exit 1
+fi
+
+# backup device is mounted and device locatoin exists
+echo "backing up"
+
+exit
+
+# perform backup
+rsync -av --delete $LOCATION_TO_BACKUP $MOUNT_POINT
